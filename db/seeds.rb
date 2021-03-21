@@ -1,19 +1,19 @@
 
 ############# REST CLIENT API ##############
 
-response = RestClient.get 'https://v3.openstates.org/people?page=1&per_page=50&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
-reps_page_one = JSON.parse(response)
+# response = RestClient.get 'https://v3.openstates.org/people?page=1&per_page=50&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
+# reps_page_one = JSON.parse(response)
 
-response = RestClient.get 'https://v3.openstates.org/people?page=2&per_page=50&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
-reps_page_two = JSON.parse(response)
+# response = RestClient.get 'https://v3.openstates.org/people?page=2&per_page=50&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
+# reps_page_two = JSON.parse(response)
 
-response = RestClient.get 'https://v3.openstates.org/people?page=3&per_page=50&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
-reps_page_three = JSON.parse(response)
+# response = RestClient.get 'https://v3.openstates.org/people?page=3&per_page=50&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
+# reps_page_three = JSON.parse(response)
 
-reps_page_one.each do |rep|
-    puts rep[0] 
-    # Site.create(address: bin["address"], borough: bin["borough"], name: bin["park_site_name"], website: "https://www1.nyc.gov/assets/dsny/site/home", latitude: bin["latitude"], longitude: bin["longitude"], rating: 0, accepted_items: "paper,cardboard, plastic, glass, cartons", image: "https://upload.wikimedia.org/wikipedia/en/0/08/DSNY_logo_2016.jpg", hours: "7am-3pm", twitter: "https://twitter.com/nycsanitation?lang=en", ig: "https://www.instagram.com/nycsanitation/?hl=en", facebook: "https://www.facebook.com/nycsanitation/")
-end
+# reps_page_one.each do |rep|
+#     puts rep[0] 
+# end
+# Site.create(address: bin["address"], borough: bin["borough"], name: bin["park_site_name"], website: "https://www1.nyc.gov/assets/dsny/site/home", latitude: bin["latitude"], longitude: bin["longitude"], rating: 0, accepted_items: "paper,cardboard, plastic, glass, cartons", image: "https://upload.wikimedia.org/wikipedia/en/0/08/DSNY_logo_2016.jpg", hours: "7am-3pm", twitter: "https://twitter.com/nycsanitation?lang=en", ig: "https://www.instagram.com/nycsanitation/?hl=en", facebook: "https://www.facebook.com/nycsanitation/")
 
 # response = RestClient.get 'https://data.cityofnewyork.us/resource/qnjm-wvu5.json'
 # array_of_textiles = JSON.parse(response)
@@ -34,19 +34,19 @@ end
 
 
 
-Rep.create(user_id:, senate_committee_id:, name:, district:, hometown:, committees:, party:, year:_elected:, phone_number:, email:)
-Senate.create(user_id:, senate_committee_id:, name:, district:, hometown:, committees:, party:, year_elected:, phone_number:, email:)
+# Rep.create(user_id:, senate_committee_id:, name:, district:, hometown:, committees:, party:, year:_elected:, phone_number:, email:)
+# Senate.create(user_id:, senate_committee_id:, name:, district:, hometown:, committees:, party:, year_elected:, phone_number:, email:)
 
-RepBill.create(rep_id:, rep_committee_id:, sponsor:, co_sponsor:, votes:, bill_number:, committee:, subject:)
-SenateBill.create(senate_id:, senate_committee_id:, sponsor:, co_sponsor:, votes:, bill_number:, committee:, subject:)
+# RepBill.create(rep_id:, rep_committee_id:, sponsor:, co_sponsor:, votes:, bill_number:, committee:, subject:)
+# SenateBill.create(senate_id:, senate_committee_id:, sponsor:, co_sponsor:, votes:, bill_number:, committee:, subject:)
 
-SenateCommittee.create(name:, chair:, vice_chair:, ranking_member:, members:)
-RepCommittee.create(name:, chair:, vice_chair:, ranking_member:, members:)
+# SenateCommittee.create(name:, chair:, vice_chair:, ranking_member:, members:)
+# RepCommittee.create(name:, chair:, vice_chair:, ranking_member:, members:)
 
-RepCampaignFinance.create(contributor:, amount:, affiliation:)
-SenateCampaignFinance.create(contributor:, amount:, affiliation:)
+# RepCampaignFinance.create(contributor:, amount:, affiliation:)
+# SenateCampaignFinance.create(contributor:, amount:, affiliation:)
 
-MinorityBusiness.create(address:, rating:, image:, hours:, website:, twitter:, ig:, facebook:) 
+# MinorityBusiness.create(address:, rating:, image:, hours:, website:, twitter:, ig:, facebook:) 
 
 
 
