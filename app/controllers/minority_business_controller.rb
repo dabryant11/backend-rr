@@ -8,6 +8,8 @@ class MinorityBusinessController < ApplicationController
   end
 
   def create
+    minority_business = MinorityBusiness.create(minority_business_params)
+    render json: minority_business
   end
 
   def show
@@ -27,7 +29,7 @@ class MinorityBusinessController < ApplicationController
 
   private
   def minority_business_params
-      params.permit(:id, :address, :rating, :image, :hours, :website, :twitter, :ig, :facebook)
+      params.permit(:id, :name, :address, :rating, :image, :hours, :website, :twitter, :ig, :facebook)
   end
 
 
