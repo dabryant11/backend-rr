@@ -1,4 +1,4 @@
-class CommitteeController < ApplicationController
+class CommitteesController < ApplicationController
   def index
     committees = Committee.all
      render json: committees
@@ -27,6 +27,6 @@ class CommitteeController < ApplicationController
  
    private
    def committee_params
-       params.permit(:name, :chair, :vice_chair, :ranking_member, :members)
+       params.permit(:name, :chair, :vice_chair, :ranking_member, :members, :chamber)
    end
 end

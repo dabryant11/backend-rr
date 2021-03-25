@@ -6,6 +6,7 @@ class CreateCommittees < ActiveRecord::Migration[6.1]
       t.string :vice_chair
       t.string :ranking_member
       t.string :members
+      t.string :chamber
 
       t.timestamps
     end

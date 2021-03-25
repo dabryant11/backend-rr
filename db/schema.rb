@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_03_18_165908) do
     t.string "vice_chair"
     t.string "ranking_member"
     t.string "members"
+    t.string "chamber"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

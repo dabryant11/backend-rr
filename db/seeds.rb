@@ -96,7 +96,7 @@ bill_page_one = JSON.parse(bill_response)
 
 bill_page_one["results"].each do |bill|
     # puts rep[0] 
-    Bill.create!( legislator_id:"" , committee_id:"", chamber: bill["from_organization"]["name"], title: bill["title"], status:bill["latest_action_description"], sponsor: "", co_sponsor: "", votes:"", bill_number:bill["subject"], committee:"", subject:bill["subject"])
+    Bill.create!( legislator_id:"" , committee_id:"", chamber: bill["from_organization"]["name"], title: bill["title"], status:bill["latest_action_description"], sponsor: "", co_sponsor: "", votes:"", bill_number:bill["identifier"], committee:"", subject:bill["subject"])
 end
 
 
@@ -115,9 +115,23 @@ end
 
 
 
-# Committee.create(name:"", chair:"", vice_chair:"", ranking_member:"")
 
+Committee.create(name:"Agriculture and Conservation", chair:"J. Kyle Koehler", vice_chair:"Rodney Creech", ranking_member:"Juanita O. Brent", chamber:"House of Representatives")
+Committee.create(name:"Criminal Justice", chair:"Jeff LaRe", vice_chair:"D.J. Swearingen", ranking_member:"David Leland", chamber:"House of Representatives")
+Committee.create(name:"Energy and Natural Resources", chair:"Jason Stephens", vice_chair:"Brian Stewart", ranking_member:"Casey Weinstein", chamber:"House of Representatives")
+Committee.create(name:"Economic and Workforce Development", chair:"Jay Edwards", vice_chair:"Jena Powell", ranking_member:"Terrence Upchurch", chamber:"House of Representatives")
+Committee.create(name:"Finance", chair:"Scott Oelslager", vice_chair:"Phil Plummer", ranking_member:"Erica C. Crawley", chamber:"House of Representatives")
+Committee.create(name:"Primary and Secondary Education", chair:"Gayle Manning", vice_chair:"Adam C. Bird", ranking_member:"Phillip M. Robinson Jr.", chamber:"House of Representatives")
+Committee.create(name:"Public Utilities", chair:"James M. Hoops", vice_chair:"Sharon A. Ray", ranking_member:"Kent Smith", chamber:"House of Representatives")
+Committee.create(name:"Technology and Innovation", chair:"Mark Frazier", vice_chair:"Thomas Hall", ranking_member:"Mary Lightbody", chamber:"House of Representatives")
+Committee.create(name:"Transportation and Public Safety", chair:"Brian Baldridge", vice_chair:"Riordan T. McClain", ranking_member:"Michael Sheehy", chamber:"House of Representatives")
 
+Committee.create(name:"Health", chair:"Stephen A. Huffman", vice_chair:"Niraj Antani", ranking_member:"Nickie J. Antonio", chamber:"Senate")
+Committee.create(name:"Local Government and Elections", chair:"Theresa Gavarone", vice_chair:"Sandra O'Brien", ranking_member:"Tina Maharath", chamber:"Senate")
+Committee.create(name:"Workforce and Higher Education", chair:"Terry Johnson", vice_chair:"Jerry C. Cirino", ranking_member:"Sandra R. Williams", chamber:"Senate")
+Committee.create(name:"Small Business and Economic Opportunity", chair:"Michael A. Rulli", vice_chair:"George F. Lang", ranking_member:"Vernon Sykes", chamber:"Senate")
+Committee.create(name:"Energy and Public Utilities", chair:"Bob Peterson", vice_chair:"Kirk Schuring", ranking_member:"Sandra R. Williams", chamber:"Senate")
+Committee.create(name:"Financial Institutions and Technology", chair:"Steve Wilson", vice_chair:"Jay Hottinger", ranking_member:"Tina Maharath", chamber:"Senate")
 
 
 
