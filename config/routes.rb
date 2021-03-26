@@ -9,7 +9,7 @@ post '/user_legislators', to: 'user_legislator#create'
 get '/user_legislator/:id', to: 'user_legislator#show'
 get '/user_legislator/:id/edit', to: 'user_legislator#edit', as: 'edit_user_legislator'
 delete '/user_legislator/:id', to: 'user_legislator#delete'
-patch '/user_legislator/:id', to: 'user_legislator#update'
+patch '/user_legislators/:id', to: 'user_legislator#update'
 
 #########  LEGISLATOR ###############
   

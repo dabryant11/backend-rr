@@ -23,8 +23,8 @@ Bill.reset_pk_sequence
 Committee.destroy_all
 Committee.reset_pk_sequence
 
-CampaignFinance.destroy_all
-CampaignFinance.reset_pk_sequence
+# CampaignFinance.destroy_all
+# CampaignFinance.reset_pk_sequence
 
 
 

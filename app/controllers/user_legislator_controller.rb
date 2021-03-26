@@ -21,8 +21,9 @@ class UserLegislatorController < ApplicationController
   end
 
   def update
-    user_legislator = UserLegislator.find(params[:id])
+    user_legislator = UserLegislator.find_by(user_id:params[:user_id], legislator_id: params[:legislator_id])
     user_legislator.update(user_legislator_params)
+    # byebug
     render json: user_legislator
   end
 
