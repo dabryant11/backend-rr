@@ -89,5 +89,14 @@ patch '/minority_business/:id', to: 'minority_business#update'
 delete '/minority_business/:id', to: 'minority_business#delete'
 
 
+######### CAMPAIGN FINANCES ###############
+  
+get '/campaign_finances', to: 'campaign_finances#index'
+get '/campaign_finances/new', to: 'campaign_finances#new', as: 'new_campaign_finances_site'
+post '/campaign_finances', to: 'campaign_finances#create'
+get '/campaign_finances/:id', to: 'campaign_finances#show'
+get '/campaign_finances/:id/edit', to: 'campaign_finances#edit', as: 'edit_campaign_finances_site'
+patch '/campaign_finances/:id', to: 'campaign_finances#update'
+delete '/campaign_finances/:id', to: 'campaign_finances#delete'
 
 end

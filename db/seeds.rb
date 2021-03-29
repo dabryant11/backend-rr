@@ -23,9 +23,21 @@ Bill.reset_pk_sequence
 Committee.destroy_all
 Committee.reset_pk_sequence
 
-# CampaignFinance.destroy_all
-# CampaignFinance.reset_pk_sequence
+CampaignFinance.destroy_all
+CampaignFinance.reset_pk_sequence
 
+
+
+money = RestClient.get 'https://api.followthemoney.org/?dt=1&s=OH&y=2019,2020&c-r-ot=H&gro=c-t-id&APIKey=f6dfbf2ee7327f659b97d19b333b1f34&mode=json'
+reps_money = JSON.parse(money)
+
+reps_money["records"].each do |cfinance|
+    # puts cfinance["Candidate"]["Candidate"]
+    # puts cfinance["Office_Sought"]["Office_Sought"]
+    # puts cfinance["#_of_Records"]["#_of_Records"]
+    # puts cfinance["Total_$"]["Total_$"]
+    CampaignFinance.create!( name: cfinance["Candidate"]["Candidate"], district: cfinance["Office_Sought"]["Office_Sought"], num_of_donors: cfinance["#_of_Records"]["#_of_Records"], total_contribtuions: cfinance["Total_$"]["Total_$"])
+    end
 
 
 ############# REST CLIENT API ##############
@@ -97,6 +109,35 @@ bill_response = RestClient.get 'https://v3.openstates.org/bills?page=1&per_page=
 bill_page_one = JSON.parse(bill_response)
 
 bill_page_one["results"].each do |bill|
+    # puts rep[0] 
+    Bill.create!( legislator_id:"" , committee_id:"", chamber: bill["from_organization"]["name"], title: bill["title"], status:bill["latest_action_description"], sponsor: "", co_sponsor: "", votes:"", bill_number:bill["identifier"], committee:"", subject:bill["subject"])
+end
+
+bill_response_two = RestClient.get 'https://v3.openstates.org/bills?page=2&per_page=20&created_since=2021-01-01&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
+bill_page_two = JSON.parse(bill_response_two)
+
+bill_page_two["results"].each do |bill|
+    # puts rep[0] 
+    Bill.create!( legislator_id:"" , committee_id:"", chamber: bill["from_organization"]["name"], title: bill["title"], status:bill["latest_action_description"], sponsor: "", co_sponsor: "", votes:"", bill_number:bill["identifier"], committee:"", subject:bill["subject"])
+end
+bill_response_three = RestClient.get 'https://v3.openstates.org/bills?page=2&per_page=20&created_since=2021-01-01&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
+bill_page_three = JSON.parse(bill_response_three)
+
+bill_page_three["results"].each do |bill|
+    # puts rep[0] 
+    Bill.create!( legislator_id:"" , committee_id:"", chamber: bill["from_organization"]["name"], title: bill["title"], status:bill["latest_action_description"], sponsor: "", co_sponsor: "", votes:"", bill_number:bill["identifier"], committee:"", subject:bill["subject"])
+end
+bill_response_four = RestClient.get 'https://v3.openstates.org/bills?page=2&per_page=20&created_since=2021-01-01&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
+bill_page_four = JSON.parse(bill_response_four)
+
+bill_page_four["results"].each do |bill|
+    # puts rep[0] 
+    Bill.create!( legislator_id:"" , committee_id:"", chamber: bill["from_organization"]["name"], title: bill["title"], status:bill["latest_action_description"], sponsor: "", co_sponsor: "", votes:"", bill_number:bill["identifier"], committee:"", subject:bill["subject"])
+end
+bill_response_five = RestClient.get 'https://v3.openstates.org/bills?page=2&per_page=20&created_since=2021-01-01&jurisdiction=ocd-jurisdiction/country:us/state:oh/government&apikey=9c88aba1-7aa1-4f70-9d5c-cffd22cbe878'
+bill_page_five = JSON.parse(bill_response_five)
+
+bill_page_five["results"].each do |bill|
     # puts rep[0] 
     Bill.create!( legislator_id:"" , committee_id:"", chamber: bill["from_organization"]["name"], title: bill["title"], status:bill["latest_action_description"], sponsor: "", co_sponsor: "", votes:"", bill_number:bill["identifier"], committee:"", subject:bill["subject"])
 end
